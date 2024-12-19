@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 // import CreateUser from './component/Creatser';
 // import LocalUsers from './component/LocalUsers';
-import MockUsers from './component/MockUsers';
+// import MockUsers from './component/MockUsers';
 // import RevisionUser from './component/RevisionUser';
 import ExamUsers from './component/ExamUsers';
 // import RevisionList from './component/Revision/RevisionListChap';
@@ -17,21 +17,23 @@ import AppExam from './AppExam';
 import RevisionUser from './component/RevisionUser';
 import RevisionListChap from './component/Revision/RevisionListChap';
 import RevisionChap1 from './component/Revision/RevisionChap1';
-import Login from './Header/Login';
-import RegisterForm from './Header/RegisterForm';
-import Forgot from './component/Forgot';
+import Home from './component/Home';
+import Login from './Header/Login'
+import RegisterForm from './Header/RegisterForm'
+import Forgot from './component/Forgot'
 
 function App() {
   return (
     <div>
     <Router>  {/* Đảm bảo <Router> bao bọc toàn bộ ứng dụng */}
       <Routes>
-        <Route exact path="/" element={<MockUsers />} /> {/* Trang Chủ */}
-        <Route exact path="/revision" element={<RevisionUser />} /> {/* Ôn Tập */}
-        <Route path="/listChap/:subjectId" element={<RevisionListChap />} />        <Route exact path="/chap/:id" element={<RevisionChap1 />} />          {/* câu hỏi ôn tập theo chương */}
+        <Route exact path="/" element={<Home />} /> {/* Trang Chủ */}
         <Route path="/login" element={<Login/>}/>
-        <Route path='/register' element={<RegisterForm/>}/>
-        <Route path='/forgot' element={<Forgot/>}/>
+        <Route path="/register" element={<RegisterForm/>}/>
+        <Route path="/forgot" element={<Forgot/>}/>
+        <Route exact path="/revision" element={<RevisionUser />} /> {/* Ôn Tập */}
+        <Route path="/listChap/:subjectId" element={<RevisionListChap />} />        
+        <Route exact path="/chap/:id" element={<RevisionChap1 />} />          {/* câu hỏi ôn tập theo chương */}
       </Routes>
     </Router>
 

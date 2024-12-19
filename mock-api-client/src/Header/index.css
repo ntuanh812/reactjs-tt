@@ -85,8 +85,3 @@
     color: white;  /* Màu chữ khi hover */
     transform: scale(1.05); /* Tăng kích thước khi hover */
 }
-
-.clickLogin{
-    padding: 10px 20px;
-    background-color: #00bcd4;
-}
